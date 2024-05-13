@@ -20,9 +20,14 @@ app.use(helmet());
 app.use(cors());
 // Apply rate limit middleware to API requests
 app.use(limiter);
-// Requests that pass through the middleware will be compressed.
+// // Requests that pass through the middleware will be compressed.
 app.use(compression());
 
+app.all('/*', function(req, res, next) {
+	res.header("Access-Control-Allow-Origin", "*");
+	res.header("Access-Control-Allow-Headers", "X-Requested-With");
+	next();
+  });
 app.use('/v1', appRoute)
 app.use('/v1/user', userRoute);
 
