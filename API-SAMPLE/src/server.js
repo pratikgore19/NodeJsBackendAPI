@@ -17,17 +17,14 @@ const limiter = rateLimit({
 //secure Express apps by setting HTTP response headers.
 app.use(helmet());
 // Enable cors for all requests
-app.use(cors());
+app.use(cors({
+	origin: /^http:\/\/localhost:5000(?:\/.*)?$/ // Replace with our React app's domain
+  }));
 // Apply rate limit middleware to API requests
 app.use(limiter);
 // // Requests that pass through the middleware will be compressed.
 app.use(compression());
 
-app.all('/*', function(req, res, next) {
-	res.header("Access-Control-Allow-Origin", "*");
-	res.header("Access-Control-Allow-Headers", "X-Requested-With");
-	next();
-  });
 app.use('/v1', appRoute)
 app.use('/v1/user', userRoute);
 
