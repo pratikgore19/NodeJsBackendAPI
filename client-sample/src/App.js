@@ -1,8 +1,8 @@
-import ReadUsers from './components/ReadUsers'
+import UsersList from './components/UsersList'
 
 function App() {
   return (
-      <ReadUsers />
+      <UsersList />
   );
 }
 

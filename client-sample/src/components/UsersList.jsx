@@ -6,7 +6,7 @@ import { Container, Row } from 'react-bootstrap'
 import UserCard from './UserCard';
 import Loader from './Loader';
 
-const ReadUsers = () => {
+const UsersList = () => {
     const getAllUsersUrl = 'http://localhost:4000/v1/user/all';
 
     const [users, setUsers] = useState([]);
@@ -44,13 +44,11 @@ const ReadUsers = () => {
     }
     return (
         <>
-            <Container fluid>
+            <Container className='mt-5 mb-5' fluid>
                 <h3 className='text-center'>Users</h3>
-                <Row className='d-flex flex-row flex-wrap'>
-                    {renderUser}
-                </Row>
+                <Row className='flex-wrap mt-4'>{renderUser}</Row>
             </Container>
         </>
     )
 }
-export default ReadUsers
+export default UsersList
