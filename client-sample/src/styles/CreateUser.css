@@ -1,0 +1,30 @@
+/* Apply styles to all placeholder texts globally */
+::placeholder {
+    color: #aaa; /* Light grey color for subtlety */
+    font-weight: 300; /* Light font weight for elegance */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern sans-serif font */
+    opacity: 0.7; /* Slightly transparent to distinguish from input */
+  }
+  
+  /* For better compatibility across different browsers */
+  input::placeholder {
+    color: #aaa;
+    font-weight: 300;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    opacity: 0.7;
+  }
+  
+  textarea::placeholder {
+    color: #aaa;
+    font-weight: 300;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    opacity: 0.7;
+  }
+  
+  select::placeholder {
+    color: #aaa;
+    font-weight: 300;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    opacity: 0.7;
+  }
+  
