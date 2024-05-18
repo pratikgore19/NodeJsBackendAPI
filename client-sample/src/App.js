@@ -1,16 +1,15 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import React, { Suspense } from 'react';
 
-import Footer from './components/Footer';
+import Home from './components/Home';
+import UsersList from './components/UsersList';
+import CreateUser from './components/CreateUser';
+import AboutUs from './components/AboutUs';
 import MenuBar from './components/MenuBar';
-import Loader from './helper/Loader';
+import Footer from './components/Footer';
+import Loader from './helper/Loader'
 
 import './App.css'
-
-const Home = React.lazy(() => import('./components/Home'));
-const AboutUs = React.lazy(() => import('./components/AboutUs'));
-const CreateUser = React.lazy(() => import('./components/CreateUser'));
-const UsersList = React.lazy(() => import('./components/UsersList'));
 
 const App = () => {
   return (
