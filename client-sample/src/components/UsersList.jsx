@@ -4,7 +4,7 @@ import axios from 'axios'
 import { useEffect } from 'react';
 import { Container, Row } from 'react-bootstrap'
 import UserCard from './UserCard';
-import Loader from './Loader';
+import Loader from '../helper/Loader';
 
 const UsersList = () => {
     const getAllUsersUrl = 'http://localhost:4000/v1/user/all';
@@ -44,7 +44,7 @@ const UsersList = () => {
     }
     return (
         <>
-            <Container className='mt-5 mb-5' fluid>
+            <Container className='mb-5' fluid>
                 <h3 className='text-center'>Users</h3>
                 <Row className='flex-wrap mt-4'>{renderUser}</Row>
             </Container>
