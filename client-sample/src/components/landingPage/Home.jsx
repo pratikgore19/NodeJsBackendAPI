@@ -1,9 +1,9 @@
 import React from 'react'
 import { Container, Button } from 'react-bootstrap';
 
-import '../styles/Home.css'
-import Testimonials from './landingPage/Testimonials';
-import Features from './landingPage/Features';
+import '../../styles/Home.css'
+import Testimonials from './Testimonials';
+import Features from './Features';
 
 const Home = () => {
   return (

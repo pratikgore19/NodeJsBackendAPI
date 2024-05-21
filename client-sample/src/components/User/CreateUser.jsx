@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react'
-import '../styles/CreateUser.css'
+import '../../styles/CreateUser.css'
 import { Container, Form, Row, Col, Button } from 'react-bootstrap';
 import { toast } from 'react-toastify'
 

@@ -4,7 +4,7 @@ import axios from 'axios'
 import { useEffect } from 'react';
 import { Container, Row } from 'react-bootstrap'
 import UserCard from './UserCard';
-import Loader from '../helper/Loader';
+import Loader from '../../helper/Loader';
 
 const UsersList = () => {
     const getAllUsersUrl = 'http://localhost:4000/v1/user/all';

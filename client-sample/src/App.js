@@ -1,12 +1,12 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import React, { Suspense } from 'react';
 
-import Home from './components/Home';
-import UsersList from './components/UsersList';
-import CreateUser from './components/CreateUser';
-import AboutUs from './components/AboutUs';
-import MenuBar from './components/MenuBar';
-import Footer from './components/Footer';
+import Home from './components/landingPage/Home';
+import UsersList from './components/User/UsersList';
+import CreateUser from './components/User/CreateUser';
+import AboutUs from './components/Common/AboutUs';
+import MenuBar from './components/Common/MenuBar';
+import Footer from './components/Common/Footer';
 import Loader from './helper/Loader'
 
 import './App.css'
