@@ -51,7 +51,7 @@ const CreateUser = () => {
 
                 // Reset form fields to their initial values
                 setUserName('');
-                setAge(0);
+                setAge(18);
                 setUserEmail('');
                 setUserCity('');
 

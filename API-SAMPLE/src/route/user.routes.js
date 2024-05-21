@@ -31,6 +31,6 @@ userRoute.put('/:id',
     userController.updateUser
     )
 
-userRoute.delete('/:id', userController.deleteUser)
+userRoute.delete('/delete/:id', userController.deleteUser)
 
 export default userRoute;

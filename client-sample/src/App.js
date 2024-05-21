@@ -12,6 +12,7 @@ import Loader from './helper/Loader'
 import './App.css'
 import 'react-toastify/dist/ReactToastify.min.css';
 import { ToastContainer } from 'react-toastify';
+import UserDetails from './components/User/UserDetails';
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
               <Route path="/all-users" element={<UsersList />} />
               <Route path="/create-user" element={<CreateUser />} />
               <Route path="/about-us" element={<AboutUs />} />
+              <Route path="/user/:id" element={<UserDetails />} />
             </Routes>
           </div>
           <ToastContainer />
