@@ -10,6 +10,8 @@ import Footer from './components/Footer';
 import Loader from './helper/Loader'
 
 import './App.css'
+import 'react-toastify/dist/ReactToastify.min.css';
+import { ToastContainer } from 'react-toastify';
 
 const App = () => {
   return (
@@ -25,6 +27,7 @@ const App = () => {
               <Route path="/about-us" element={<AboutUs />} />
             </Routes>
           </div>
+          <ToastContainer />
           <Footer />
         </div>
       </Suspense>

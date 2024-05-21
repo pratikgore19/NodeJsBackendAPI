@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const MenuBar = () => {
     return (
-        <Navbar className="mb-3" bg="dark" variant="dark" expand="lg">
+        <Navbar className="mb-3 p-2" bg="dark" variant="dark" expand="lg">
             <Navbar.Brand as={Link} to="/">MyWebsite</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">

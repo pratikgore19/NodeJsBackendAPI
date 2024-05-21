@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react'
 import '../styles/CreateUser.css'
 import { Container, Form, Row, Col, Button } from 'react-bootstrap';
+import {toast} from 'react-toastify'
 
 const CreateUser = () => {
     const createUserEndpoint = 'http://localhost:4000/v1/user';
@@ -10,7 +11,6 @@ const CreateUser = () => {
     const [userAge, setAge] = useState('');
     const [userEmail, setUserEmail] = useState('');
     const [userCity, setUserCity] = useState('');
-    const [error, setError] = useState(null);
 
     const onSubmit = async (event) => {
         event.preventDefault();
@@ -24,26 +24,23 @@ const CreateUser = () => {
 
         try {
             const res = await axios.post(createUserEndpoint,payLoad);
-            if(res?.data.status.OK) {
-
+            if(res?.data.status) {
+                console.log(res.data);
+                toast.success('User Successfully Created')
                 setUserName('');
                 setAge('');
                 setUserEmail('');
                 setUserCity('');
             }
             else {
-                
+                console.log(payLoad);
+                toast.warn('Something went wrong while filling data');
             }
         }
         catch(error) {
-            setError(error);
+            toast.error('An error occured while submitting data to backend');
+            console.log(error);
         }
-    }
-
-    if (error) {
-        return (
-            <div className="error-message">{error.message}</div>
-        )
     }
 
     return (

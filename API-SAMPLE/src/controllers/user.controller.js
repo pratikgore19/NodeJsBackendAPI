@@ -15,12 +15,12 @@ const getUsers = (req, res) => {
     const users = userService.getUsers();
     if (!users.length) {
         return res.status(StatusCode.NOT_FOUND).send({
-            status: 'failure',
+            status: false,
             message: 'No users found'
         });
     }
     return res.status(StatusCode.OK).send({
-        status: 'success',
+        status: true,
         users,
         message: 'Data recieved successfully'
     });
@@ -37,13 +37,13 @@ const getUserById = (req, res) => {
     const user = userService.getUserById(parseInt(id));
     if (!user) {
         return res.status(StatusCode.OK).send({
-            status: 'failure',
+            status: false,
             message: `User with id ${id} does not exist`
         });
     }
     logger.info(`Retrieving user ${id}`)
     return res.status(StatusCode.OK).send({
-        status: 'success',
+        status: true,
         user,
         message: 'Data recieved successfully'
     });
@@ -58,16 +58,10 @@ const getUserById = (req, res) => {
 const addUser = (req, res) => {
     const { body: user } = req;
 
-    if (!user.name) {
-        return res.status(StatusCode.BAD_REQUEST).send({
-            status: 'failure',
-            message: 'Name is required'
-        });
-    }
     const addedUser = userService.addUser(user);
     logger.info('User added successfully!')
     return res.status(StatusCode.ACCEPTED).send({
-        status: 'success',
+        status: true,
         user: addedUser,
         message: 'Data recieved successfully'
     });
@@ -86,14 +80,14 @@ const updateUser = (req, res) => {
     if (updatedUser) {
         logger.info(`User ${id} updated successfully!`)
         return res.status(StatusCode.ACCEPTED).send({
-            status: 'success',
+            status: true,
             user: updatedUser,
             message: 'Data updated successfully'
         });
     }
     else {
         return res.status(StatusCode.NOT_FOUND).send({
-            status: 'failure',
+            status: false,
             message: `User with ID ${id} not found`
         });
     }
@@ -111,13 +105,13 @@ const deleteUser = (req, res) => {
     if (deletedUser) {
         logger.info(`User ${id} deleted successfully`)
         return res.status(StatusCode.OK).send({
-            status: 'success',
+            status: true,
             message: `User-${id} has been removed`
         });
     }
     else {
         return res.status(StatusCode.NOT_FOUND).send({
-            status: 'failure',
+            status: false,
             message: `User with ID ${id} not found`
         });
     }
