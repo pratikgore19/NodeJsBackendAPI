@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 import { Container, Row } from 'react-bootstrap'
 import UserCard from './UserCard';
 import Loader from '../../helper/Loader';
+import { useNavigate } from 'react-router-dom';
 
 const UsersList = () => {
     const getAllUsersUrl = 'http://localhost:4000/v1/user/all';
@@ -12,9 +13,14 @@ const UsersList = () => {
     const [users, setUsers] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
+    const navigate = useNavigate();
     useEffect(() => {
         fetchUsers();
     }, []);
+
+    const viewDetails = (id) => {
+        navigate(`/user/${id}`);
+    }
 
     const fetchUsers = async () => {
         await axios.get(`${getAllUsersUrl}`)
@@ -29,7 +35,7 @@ const UsersList = () => {
     }
 
     const renderUser = Object.values(users).map(user => {
-        return <UserCard key={user.id} user={user} />
+        return <UserCard id={user.id} key={user.id} user={user} onButtonClick = {viewDetails} />
     })
 
     if (isLoading) {
