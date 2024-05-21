@@ -9,7 +9,7 @@ const CreateUser = () => {
 
     // Initialize state for form fields
     const [userName, setUserName] = useState('');
-    const [userAge, setAge] = useState();
+    const [userAge, setAge] = useState(0);
     const [userEmail, setUserEmail] = useState('');
     const [userCity, setUserCity] = useState('');
 
