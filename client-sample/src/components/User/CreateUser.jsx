@@ -100,7 +100,7 @@ const CreateUser = () => {
 
     return (
         <Container className='mb-5' >
-            <h1 className='text-center mb-5 mt-3'>Create User</h1>
+            <h1 className='text-center mb-5 mt-3'>Create Profile</h1>
             <Row className='justify-content-center' >
                 <Col lg={6}>
                     <Form onSubmit={handleSubmit} >
@@ -147,7 +147,7 @@ const CreateUser = () => {
                             {cityError && <p style={{ color: 'red' }}>{cityError}</p>}
                         </Form.Group>
 
-                        <Button variant='primary' type='submit'>Add User</Button>
+                        <Button variant='primary' type='submit'>Add Profile</Button>
                     </Form>
                 </Col>
             </Row>

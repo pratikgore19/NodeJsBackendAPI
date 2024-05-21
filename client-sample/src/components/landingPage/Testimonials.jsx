@@ -10,7 +10,7 @@ const Testimonials = () => {
           <Card className="testimonial-card">
             <Card.Body>
               <Card.Text>
-                "This website has transformed the way we manage our users. It's incredibly easy to use and very efficient."
+                "This website has transformed the way we manage our clients. It's incredibly easy to use and very efficient."
               </Card.Text>
               <footer className="blockquote-footer">Jane Doe</footer>
             </Card.Body>

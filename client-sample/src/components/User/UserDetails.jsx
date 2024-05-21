@@ -62,7 +62,7 @@ const UserDetails = () => {
     <Container className="mt-2">
       <Row>
         <Col md={8} className="mx-auto">
-          <h1>User Details</h1>
+          <h1>Client Details</h1>
           <div className="user-detail-item">
             <strong>Name:</strong> {user.userName}
           </div>

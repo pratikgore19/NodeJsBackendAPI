@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 const MenuBar = () => {
     const links = [
         { path: '/', label: 'Home' },
-        { path: '/all-users', label: 'All Users' },
-        { path: '/create-user', label: 'Create User' },
+        { path: '/all-users', label: 'Clients' },
+        { path: '/create-user', label: 'Create Profile' },
         { path: '/about-us', label: 'About Us' }
       ];
     

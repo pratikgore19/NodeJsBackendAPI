@@ -45,7 +45,7 @@ const UsersList = () => {
     return (
         <>
             <Container className='mb-5 p-3' fluid>
-                <h3 className='text-center'>Users</h3>
+                <h3 className='text-center'>Clients</h3>
                 <Row className='flex-wrap mt-4'>{renderUser}</Row>
             </Container>
         </>
