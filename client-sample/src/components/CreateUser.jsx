@@ -9,7 +9,7 @@ const CreateUser = () => {
 
     // Initialize state for form fields
     const [userName, setUserName] = useState('');
-    const [userAge, setAge] = useState(0);
+    const [userAge, setAge] = useState();
     const [userEmail, setUserEmail] = useState('');
     const [userCity, setUserCity] = useState('');
 
@@ -108,7 +108,7 @@ const CreateUser = () => {
                             <Form.Label>Name</Form.Label>
                             <Form.Control
                                 type='text'
-                                value = {userName}
+                                value={userName}
                                 placeholder='Tom Hughes'
                                 onChange={handleNameChange}
                             />
@@ -118,7 +118,7 @@ const CreateUser = () => {
                             <Form.Label>Email</Form.Label>
                             <Form.Control
                                 type='email'
-                                value = {userEmail}
+                                value={userEmail}
                                 placeholder='tomhughes@gmail.com'
                                 onChange={handleEmailChange}
                             />
@@ -128,9 +128,11 @@ const CreateUser = () => {
                             <Form.Label>Age</Form.Label>
                             <Form.Control
                                 type='number'
-                                value = {userAge}
+                                value={userAge}
                                 placeholder='32'
                                 onChange={handleAgeChange}
+                                min={18}
+                                max={70}
                             />
                             {ageError && <p style={{ color: 'red' }}>{ageError}</p>}
                         </Form.Group>
@@ -138,7 +140,7 @@ const CreateUser = () => {
                             <Form.Label>City</Form.Label>
                             <Form.Control
                                 type='text'
-                                value = {userCity}
+                                value={userCity}
                                 placeholder='New York'
                                 onChange={handleCityChange}
                             />
