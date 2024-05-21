@@ -1,10 +1,10 @@
 const users = [
     {
         id: 1,
-        name: 'Pratik Gore',
-        email: 'pratikgore@gmail.com',
-        age: 23,
-        city: 'Pune'
+        userName: 'Pratik Gore',
+        userEmail: 'pratikgore@gmail.com',
+        userAge: 23,
+        userCity: 'Pune'
     }
 ]
 
