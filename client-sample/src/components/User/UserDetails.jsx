@@ -85,7 +85,7 @@ const UserDetails = () => {
           <p>{user.userCity}</p>
         </Col>
         <div className="button-group mt-4">
-          <Button variant="primary" onClick={handleUpdate}>Update</Button>
+          <Button variant="primary" onClick={handleUpdate}>Edit</Button>
           <Button variant="danger" onClick={handleDelete}>Delete</Button>
         </div>
       </Row>

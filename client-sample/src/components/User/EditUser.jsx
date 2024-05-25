@@ -107,7 +107,7 @@ const EditUser = () => {
                     <Form onSubmit={handleSubmit}>
                     <UserForm handleInputChange={handleInputChange} formData={formData} errors={errors} />
                         <Col className='d-flex justify-content-center gap-1'>
-                            <Button variant='success' type='submit'>Done</Button>
+                            <Button variant='success' type='submit'>Update</Button>
                             <Button variant="danger" onClick={handleCancel}>Cancel</Button>
                         </Col>
                     </Form>
