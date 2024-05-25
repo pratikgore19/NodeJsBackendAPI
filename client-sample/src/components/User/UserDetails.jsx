@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import { toast } from 'react-toastify'
 import { useNavigate, useParams } from 'react-router-dom';
 import { Button, Container, Row, Col } from 'react-bootstrap';
 
 import '../../styles/UserDetails.css'
+
+import * as userService from '../../service/userService'
 
 const UserDetails = () => {
   const { id } = useParams();
@@ -12,14 +14,11 @@ const UserDetails = () => {
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
-  const getUserByIdEndpointUrl = `http://localhost:4000/v1/user/${id}`
-  const deleteUserByIdEndpointUrl = `http://localhost:4000/v1/user/delete/${id}`;
-
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const response = await axios.get(`${getUserByIdEndpointUrl}`);
-        setUser(response.data.user);
+        const apiResponse = await userService.getUserById(id)
+        setUser(apiResponse.user);
       } catch (err) {
         setError('Error fetching user details');
       } finally {
@@ -36,8 +35,8 @@ const UserDetails = () => {
 
   const handleDelete = async () => {
       try {
-        const response = await axios.delete(`${deleteUserByIdEndpointUrl}`);
-        console.log(response);
+        const apiResponse = await userService.deleteUser(id);
+        toast.success(apiResponse.message)
         navigate("/all-users");
       } catch (err) {
         setError('Error deleting user');

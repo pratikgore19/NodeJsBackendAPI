@@ -1,11 +1,11 @@
-import axios from 'axios';
 import React, { useState } from 'react'
 import '../../styles/CreateUser.css'
 import { Container, Form, Row, Col, Button } from 'react-bootstrap';
 import { toast } from 'react-toastify'
 
+import * as userService from '../../service/userService'
+
 const CreateUser = () => {
-    const createUserEndpoint = 'http://localhost:4000/v1/user';
 
     // Initialize state for form fields
     const [userName, setUserName] = useState('');
@@ -45,8 +45,8 @@ const CreateUser = () => {
         if (nameError || emailError || ageError || cityError) return;
 
         try {
-            const res = await axios.post(createUserEndpoint, payLoad);
-            if (res?.data.status) {
+            const apiResponse = await userService.createUser(payLoad);
+            if (apiResponse.status) {
                 toast.success('User Successfully Created')
 
                 // Reset form fields to their initial values

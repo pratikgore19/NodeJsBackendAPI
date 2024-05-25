@@ -15,7 +15,7 @@ const getUsers = (req, res) => {
     const users = userService.getUsers();
     if (!users.length) {
         return res.status(StatusCode.NOT_FOUND).send({
-            status: false,
+            status: true,
             message: 'No users found'
         });
     }
@@ -106,7 +106,7 @@ const deleteUser = (req, res) => {
         logger.info(`User ${id} deleted successfully`)
         return res.status(StatusCode.OK).send({
             status: true,
-            message: `User-${id} has been removed`
+            message: `User-${id} has been removed successfully`
         });
     }
     else {
