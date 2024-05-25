@@ -5,6 +5,7 @@ import { Container, Row } from 'react-bootstrap'
 import UserCard from './UserCard';
 import Loader from '../../helper/Loader';
 import { Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify'
 
 import * as userService from '../../service/userService'
 
@@ -27,6 +28,20 @@ const UsersList = () => {
         navigate(`/user/${id}`);
     }
 
+    const handleDelete = async (id) => {
+        var confirmation = window.confirm('Are you sure? You want to delete the user details');
+        if(confirmation) {
+            try {
+                const apiResponse = await userService.deleteUser(id);
+                toast.success(apiResponse.message);
+              } catch (err) {
+                alert('Error deleting user')
+              } finally {
+                console.log('User deleted');
+              }
+        }
+    }
+
     const fetchUsers = async () => {
         try {
             const apiResponse = await userService.getAllUsers();
@@ -40,7 +55,7 @@ const UsersList = () => {
     }
 
     const renderUser = Object.values(users).map(user => {
-        return <UserCard id={user.id} key={user.id} user={user} onButtonClick = {viewDetails} />
+        return <UserCard id={user.id} key={user.id} user={user} viewDetails = {viewDetails} handleDelete={handleDelete} />
     })
 
     if (isLoading) {

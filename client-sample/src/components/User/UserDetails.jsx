@@ -34,15 +34,18 @@ const UserDetails = () => {
   }
 
   const handleDelete = async () => {
+    var confirmation = window.confirm('Are you sure? You want to delete the user details');
+    if (confirmation) {
       try {
         const apiResponse = await userService.deleteUser(id);
-        toast.success(apiResponse.message)
-        navigate("/all-users");
+        toast.success(apiResponse.message);
       } catch (err) {
-        setError('Error deleting user');
+        alert('Error deleting user')
       } finally {
-        setLoading(false);
+        console.log('User deleted');
       }
+      navigate("/all-users");
+    }
   }
 
   if (loading) {
@@ -59,27 +62,32 @@ const UserDetails = () => {
 
   return (
     <Container className="mt-2">
-      <Row>
-        <Col md={8} className="mx-auto">
-          <h1>Client Details</h1>
+      <Row className='justify-content-center'>
+        <h1>Client Details</h1>
+        <Col md={1}>
           <div className="user-detail-item">
-            <strong>Name:</strong> {user.userName}
+            <strong>Name:</strong> 
           </div>
           <div className="user-detail-item">
-            <strong>Email:</strong> {user.userEmail}
+            <strong>Email:</strong> 
           </div>
           <div className="user-detail-item">
-            <strong>Age:</strong> {user.userAge}
+            <strong>Age:</strong> 
           </div>
           <div className="user-detail-item">
-            <strong>City:</strong> {user.userCity}
-          </div>
-          {/* Add more user details as needed */}
-          <div className="button-group mt-4">
-            <Button variant="primary" className="mr-2" onClick={handleUpdate}>Update</Button>
-            <Button variant="danger" onClick={handleDelete}>Delete</Button>
+            <strong>City:</strong> 
           </div>
         </Col>
+        <Col md={3} className='text-start'>
+          <p>{user.userName}</p>
+          <p>{user.userEmail}</p>
+          <p>{user.userAge}</p>
+          <p>{user.userCity}</p>
+        </Col>
+        <div className="button-group mt-4">
+          <Button variant="primary" onClick={handleUpdate}>Update</Button>
+          <Button variant="danger" onClick={handleDelete}>Delete</Button>
+        </div>
       </Row>
     </Container>
   );
