@@ -20,6 +20,7 @@ const UsersList = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
     const navigate = useNavigate();
+    
     useEffect(() => {
         fetchUsers();
     }, []);
