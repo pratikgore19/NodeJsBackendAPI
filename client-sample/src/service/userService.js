@@ -18,6 +18,11 @@ export const getUserById = async (id) => {
     return apiResponse;
 }
 
+export const editUser = async (id,payLoad) => {
+    const { data: apiResponse} = await axios.put(`${baseUrlEndpoint}/user/${id}`,payLoad);
+    return apiResponse;
+}
+
 export const deleteUser = async (id) => {
     const {data : apiResponse} = await axios.delete(`${baseUrlEndpoint}/user/delete/${id}`);
     return apiResponse;

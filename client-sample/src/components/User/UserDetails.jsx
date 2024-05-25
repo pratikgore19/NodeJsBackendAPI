@@ -30,7 +30,7 @@ const UserDetails = () => {
   }, [id]);
 
   const handleUpdate = () => {
-
+    navigate(`/user/edit/${id}`);
   }
 
   const handleDelete = async () => {

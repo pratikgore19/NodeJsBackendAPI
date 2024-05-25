@@ -13,6 +13,7 @@ import './App.css'
 import 'react-toastify/dist/ReactToastify.min.css';
 import { ToastContainer } from 'react-toastify';
 import UserDetails from './components/User/UserDetails';
+import EditUser from './components/User/EditUser';
 
 const App = () => {
   return (
@@ -27,6 +28,7 @@ const App = () => {
               <Route path="/create-user" element={<CreateUser />} />
               <Route path="/about-us" element={<AboutUs />} />
               <Route path="/user/:id" element={<UserDetails />} />
+              <Route path="/user/edit/:id" element={<EditUser />} />
             </Routes>
           </div>
           <ToastContainer />
