@@ -33,6 +33,7 @@ const UsersList = () => {
         if(confirmation) {
             try {
                 const apiResponse = await userService.deleteUser(id);
+                fetchUsers();
                 toast.success(apiResponse.message);
               } catch (err) {
                 alert('Error deleting user')
