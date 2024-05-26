@@ -14,7 +14,6 @@
   "author": "Pratik Gore",
   "license": "ISC",
   "dependencies": {
-    "ava": "^6.1.2",
     "compression": "^1.7.4",
     "cors": "^2.8.5",
     "express": "^4.19.2",
@@ -27,9 +26,16 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.24.1",
-    "@babel/core": "^7.24.4",
+    "@babel/core": "^7.24.6",
     "@babel/node": "^7.23.9",
     "@babel/preset-env": "^7.24.4",
+    "@babel/register": "^7.24.6",
+    "ava": "^6.1.3",
     "nodemon": "^3.1.0"
-  }
+  },
+  "ava": {
+		"require": [
+			"@babel/register"
+		]
+	}
 }
